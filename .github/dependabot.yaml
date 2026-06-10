@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "cron"
+      cronjob: "21 8 * * *"
+      timezone: "Asia/Shanghai"
+    commit-message:
+      prefix: "chore"
+    groups:
+      actions:
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 7
