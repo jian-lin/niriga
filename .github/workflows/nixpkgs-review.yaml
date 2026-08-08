@@ -36,7 +36,6 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes pipe-operators
       - run: mkdir -v "$reportDir"
-      # TODO remove "echo >> report.md" when we have nixpkgs-review#655
       - name: nixpkgs-review
         run: |
           # split extraArgs
@@ -46,7 +45,7 @@ jobs:
             --eval github \
             --checkout merge \
             --print-result \
-            --run "echo >> report.md && cp -v report.md $GITHUB_WORKSPACE/$reportDir/" \
+            --run "cp -v report.md $GITHUB_WORKSPACE/$reportDir/" \
             "${extraArgsArray[@]}"
         env:
           pr: ${{ inputs.pr }}
