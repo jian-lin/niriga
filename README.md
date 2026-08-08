@@ -31,6 +31,30 @@ including but not limited to:
 [gha-cache]: https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching
 [gha-secure-use]: https://docs.github.com/en/actions/reference/security/secure-use
 
+## Usage
+
+1. [Fork][] this project.
+1. [Enable][enable-dependabot-upd]
+   "Dependabot version updates"
+   in your fork.
+1. [Enable][enable-dependabot-sec]
+   "Dependabot security updates"
+   in your fork.
+1. Go to the "Actions" tab in your fork
+   and enable GitHub Actions.
+1. To run nixpkgs-review against a Nixpkgs PR,
+   [run][manually-run-gha] the [nixpkgs-review workflow][]
+   in your fork.
+   The report is available
+   in the "Show reports" step of the "Show reports" job
+   after the workflow finishes.
+
+[Fork]: https://github.com/jian-lin/niriga/fork
+[enable-dependabot-upd]: https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-version-updates#enabling-version-updates-on-forks
+[enable-dependabot-sec]: https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-security-updates#enabling-or-disabling-dependabot-security-updates-for-an-individual-repository
+[manually-run-gha]: https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow#running-a-workflow
+[nixpkgs-review workflow]: /.github/workflows/nixpkgs-review.yaml
+
 ## Status
 
 This project is usable now.
